@@ -68,7 +68,9 @@ export class ContactComponent {
   private showSnackbar(message: string, type: "success" | "error") {
     this.snackBar.open(message, "Close", {
       duration: 3000, // ✅ Auto-close in 3 seconds
-      panelClass: type === "success" ? "success-snackbar" : "error-snackbar"
+      panelClass: type === "success" ? "success-snackbar" : "error-snackbar",
+      horizontalPosition: "center",
+      verticalPosition: "bottom"
     });
   }
 }

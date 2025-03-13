@@ -1,5 +1,4 @@
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
+/* Custom Theming for Angular Material */
 @use '@angular/material' as mat;
 
 html {
@@ -43,63 +42,128 @@ html, body {
   --text: #e0e0e0;
 }
 
-/* Responsive Layout */
-.app-container {
-  flex: 1; /* Ensures content fills available space */
-  overflow-y: auto; /* Enables scrolling for content */
+/* Navbar */
+.navbar {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: white;
+  position: fixed; /* ✅ Fixes navbar at the top */
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 60px; /* ✅ Adjust height */
 }
 
-/* Responsive Grid */
+/* Logo */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Ensure Page Content Doesn't Overlap Navbar */
+body {
+  padding-top: 70px; /* ✅ Pushes content down */
+}
+
+/* Fix for Containers */
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
+  padding-top: 20px; /* ✅ Ensures content is not hidden behind navbar */
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding: 10px;
-  }
-}
-
-/* Navbar Styles */
-nav {
+/* Desktop Navigation */
+.nav-links {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background-color: var(--primary);
-  color: #fff;
 }
-
-nav a {
-  text-decoration: none;
-  color: #fff;
+.nav-links a {
   margin: 0 10px;
+  text-decoration: none;
+  color: var(--text-color);
   font-weight: bold;
-  transition: color 0.3s;
+  padding: 8px 12px;
+  border-radius: 5px; /* ✅ Slight rounding for smooth UI */
+  transition: color 0.3s ease, border-bottom 0.3s ease-in-out, background-color 0.3s ease;
 }
 
-nav a:hover {
-  color: var(--accent);
+/* Active Link Styling */
+.nav-links a.active {
+  border-bottom: 3px solid var(--primary);
+  color: var(--primary);
+  background-color: rgba(255, 255, 255, 0.1); /* ✅ Subtle background highlight */
 }
 
-/* Button Styling */
-button {
-  background-color: var(--primary);
-  color: #fff;
+/* Hover Effect */
+.nav-links a:hover {
+  color: var(--primary);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hamburger Button */
+.menu-btn {
+  display: none;
+  background: transparent;
   border: none;
-  padding: 10px 15px;
-  font-size: 16px;
+  color: white;
+  font-size: 24px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
-button:hover {
-  background-color: var(--accent);
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100vh;
+  background: var(--primary);
+  box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: none; /* ✅ Hide on large screens */
+  flex-direction: column;
+  z-index: 1000;
+  transition: right 0.3s ease-in-out;
+}
+
+.mobile-menu.open {
+  right: 0;
+  display: flex;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: self-start;
+}
+
+.mobile-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  color: white !important;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.mobile-nav a:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* Close Button */
+.close-btn {
+  align-self: flex-end;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
 }
 
 /* Footer - Fixed at the Bottom */
@@ -121,7 +185,33 @@ button:hover {
   padding-bottom: 60px; /* Matches footer height */
 }
 
-/* Smooth Scrolling */
-html {
-  scroll-behavior: smooth;
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* ✅ Hide Desktop Navbar on small screens */
+  }
+
+  .menu-btn {
+    display: block; /* ✅ Show Hamburger */
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  body {
+    padding-top: 60px; /* ✅ Adjust padding for smaller screens */
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu {
+    display: none !important; /* ✅ Force hide on big screens */
+  }
+}
+
+.logo-img {
+  height: 100px; /* Adjust size */
+  width: 100px;
+  object-fit: cover; /* Adjusts scaling */
 }

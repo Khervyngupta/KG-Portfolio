@@ -29,7 +29,7 @@ form {
 
 .form-group input,
 .form-group textarea {
-  width: 100%; /* ✅ Ensures all fields have equal width */
+  width: 100%; 
   padding: 12px;
   border: 1px solid var(--primary);
   border-radius: 5px;
@@ -44,7 +44,7 @@ textarea {
 }
 
 .btn {
-  width: 100%; /* ✅ Button width matches input fields */
+  width: 100%; 
   padding: 12px;
   font-size: 16px;
   color: white;
@@ -77,6 +77,26 @@ textarea {
 
 .social-icons a:hover {
   color: var(--primary);
+}
+
+/* ✅ Snackbar Styling */
+.mat-snack-bar-container {
+  background: var(--primary);
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* ✅ Fix for Small Screens */
+@media (max-width: 600px) {
+  .mat-snack-bar-container {
+    bottom: 80px !important; /* Moves Snackbar above */
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 90% !important; 
+    max-width: 300px;
+  }
 }
 
 /* Responsive */
