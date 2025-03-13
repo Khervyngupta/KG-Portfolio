@@ -19,7 +19,9 @@
       <textarea placeholder="Your Message" [(ngModel)]="contact.message" name="message" required></textarea>
     </div>
 
-    <button type="submit" class="btn">Send Message</button>
+    <button type="submit" class="btn" [disabled]="isSubmitting">
+      {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+    </button>
   </form>
 
   <!-- Social Links -->
