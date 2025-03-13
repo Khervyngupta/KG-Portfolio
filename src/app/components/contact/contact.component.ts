@@ -27,7 +27,7 @@ export class ContactComponent {
     event.preventDefault();
 
     const serviceID = environment.emailServiceID; 
-    const templateID = environment.emailTemplateID;
+    const templateID = environment.emailTemplateID
     const publicKey = environment.emailPublicKey;
 
     const templateParams = {
