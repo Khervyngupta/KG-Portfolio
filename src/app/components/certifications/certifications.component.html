@@ -1,0 +1,13 @@
+<div class="certifications-container">
+    <h2>Certifications</h2>
+  
+    <div class="certification-card" *ngFor="let cert of certifications">
+      <h3>{{ cert.name }}</h3>
+      <p class="cert-issuer">{{ cert.issuer }} | <span class="duration">{{ cert.year }}</span></p>
+  
+      <div class="cert-links">
+        <a *ngIf="cert.link" href="{{ cert.link }}" target="_blank" class="btn">View Certificate</a>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,61 @@
+<mat-toolbar color="primary" class="navbar">
+  <!-- Hamburger Button for Mobile -->
+  <button mat-icon-button class="menu-btn" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon> <!-- Hamburger Icon -->
+  </button>
+
+  <!-- <span class="logo">Portfolio</span> -->
+  <img src="assets/KGLogo3.png" alt="KG Logo" class="logo-img" />
+  <!-- <span class="spacer"></span> -->
+
+  <!-- Desktop Navbar (Hidden on Mobile) -->
+  <nav class="nav-links">
+    <a mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a mat-button routerLink="/experience" routerLinkActive="active">Experience</a>
+    <a mat-button routerLink="/education" routerLinkActive="active">Education</a>
+    <a mat-button routerLink="/projects" routerLinkActive="active">Projects</a>
+    <a mat-button routerLink="/skills" routerLinkActive="active">Skills</a>
+    <a mat-button routerLink="/certifications" routerLinkActive="active">Certifications</a>
+    <a mat-button routerLink="/achievements" routerLinkActive="active">Achievements</a>
+    <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+  </nav>
+
+  <!-- Theme Toggle Button -->
+  <!-- <button mat-icon-button (click)="toggleTheme()">
+    <mat-icon>{{ isDarkMode ? 'dark_mode' : 'light_mode' }}</mat-icon>
+  </button> -->
+</mat-toolbar>
+
+<!-- Mobile Sidebar Menu -->
+<div class="mobile-menu" [ngClass]="{ 'open': isMenuOpen }">
+  <button mat-icon-button class="close-btn" (click)="closeMenu()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <nav class="mobile-nav">
+    <a mat-button routerLink="/" routerLinkActive="active" (click)="closeMenu()">
+      <mat-icon>home</mat-icon> Home
+    </a>
+    <a mat-button routerLink="/experience" routerLinkActive="active" (click)="closeMenu()">
+      <mat-icon>work</mat-icon> Experience
+    </a>
+    <a mat-button routerLink="/education" routerLinkActive="active" (click)="closeMenu()">
+      <mat-icon>school</mat-icon> Education
+    </a>
+    <a mat-button routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">
+      <mat-icon>folder</mat-icon> Projects
+    </a>
+    <a mat-button routerLink="/skills" routerLinkActive="active" (click)="closeMenu()">
+      <mat-icon>build</mat-icon> Skills
+    </a>
+    <a mat-button routerLink="/certifications" routerLinkActive="active" (click)="closeMenu()">
+      <mat-icon>verified</mat-icon> Certifications
+    </a>
+    <a mat-button routerLink="/achievements" routerLinkActive="active" (click)="closeMenu()">
+      <mat-icon>emoji_events</mat-icon> Achievements
+    </a>
+    <a mat-button routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">
+      <mat-icon>mail</mat-icon> Contact
+    </a>
+  </nav>
+</div>

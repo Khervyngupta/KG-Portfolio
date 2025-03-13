@@ -1,0 +1,16 @@
+<div class="education-container">
+    <h2>Education</h2>
+  
+    <div class="education-card" *ngFor="let edu of education">
+      <h3>{{ edu.degree }}</h3>
+      <h4>{{ edu.institution }} | <span class="duration">{{ edu.duration }}</span></h4>
+      <p class="location">{{ edu.location }}</p>
+  
+      <ul>
+        <li *ngFor="let detail of edu.details">
+          {{ detail }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  

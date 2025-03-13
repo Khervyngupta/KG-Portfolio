@@ -1,0 +1,37 @@
+<div class="contact-container">
+  <h2>Contact Me</h2>
+
+  <p class="contact-text">
+    Let's connect! Feel free to reach out for opportunities, collaborations, or any tech discussions.
+  </p>
+
+  <!-- Contact Form -->
+  <form (submit)="sendMessage($event)">
+    <div class="form-group">
+      <input type="text" placeholder="Your Name" [(ngModel)]="contact.name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <input type="email" placeholder="Your Email" [(ngModel)]="contact.email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <textarea placeholder="Your Message" [(ngModel)]="contact.message" name="message" required></textarea>
+    </div>
+
+    <button type="submit" class="btn">Send Message</button>
+  </form>
+
+  <!-- Social Links -->
+  <div class="social-icons">
+    <a href="https://github.com/Khervyngupta" target="_blank">
+      <mat-icon>code</mat-icon> GitHub
+    </a>
+    <a href="https://www.linkedin.com/in/khervyn-gupta/" target="_blank">
+      <mat-icon>linkedin</mat-icon> LinkedIn
+    </a>
+    <a href="mailto:khervyngupta@gmail.com">
+      <mat-icon>email</mat-icon> Email
+    </a>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="achievements-container">
+    <h2>Achievements</h2>
+  
+    <div class="achievement-card" *ngFor="let achievement of achievements">
+      <h3>{{ achievement.title }}</h3>
+      <p class="achievement-details" *ngFor="let details of achievement.details">
+        {{ details }}
+      </p>
+  
+      <div class="achievement-links">
+        <a *ngIf="achievement.link" href="{{ achievement.link }}" target="_blank" class="btn">Link</a>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,93 @@
+.contact-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 28px;
+  color: var(--primary);
+}
+
+.contact-text {
+  font-size: 16px;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%; /* ✅ Ensures all fields have equal width */
+  padding: 12px;
+  border: 1px solid var(--primary);
+  border-radius: 5px;
+  font-size: 16px;
+  background: var(--background);
+  color: var(--text);
+}
+
+textarea {
+  height: 120px;
+  resize: none;
+}
+
+.btn {
+  width: 100%; /* ✅ Button width matches input fields */
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  background: var(--primary);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--accent);
+}
+
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  font-size: 18px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.social-icons a:hover {
+  color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .social-icons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
