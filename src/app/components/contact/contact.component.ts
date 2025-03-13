@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar'; 
 import emailjs from '@emailjs/browser';
-import { environment } from '../../../environments/environment';
+// import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -26,9 +26,13 @@ export class ContactComponent {
   sendMessage(event: Event) {
     event.preventDefault();
 
-    const serviceID = environment.emailServiceID; 
-    const templateID = environment.emailTemplateID
-    const publicKey = environment.emailPublicKey;
+    // const serviceID = environment.emailServiceID; 
+    // const templateID = environment.emailTemplateID
+    // const publicKey = environment.emailPublicKey;
+
+    const serviceID = 'service_xnlnsnp'; 
+    const templateID = 'template_ds22czc';
+    const publicKey = '0xeLApnxtQl8YMqKS';
 
     const templateParams = {
       from_name: this.contact.name,
